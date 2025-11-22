@@ -1,0 +1,15 @@
+{% load custom_tags %}
+<!doctype html>
+<html>
+<head><title>Custom Models</title></head>
+<body>
+  <h1>Custom Models</h1>
+  <ul>
+    {% for obj in object_list %}
+      <li><a href="{% url 'core:custommodel_detail' obj.pk %}">{{ obj.title|uppercase }}</a></li>
+    {% empty %}
+      <li>No items</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

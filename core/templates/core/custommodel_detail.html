@@ -1,0 +1,18 @@
+{% load custom_tags %}
+<!doctype html>
+<html>
+<head><title>{{ object.title }}</title></head>
+<body>
+  <h1>{{ object.title }}</h1>
+  <div>{{ object.description }}</div>
+  {% render_stats object %}
+  <h2>Items</h2>
+  <ul>
+    {% for it in object.items.all %}
+      <li>{{ it.name }}: {{ it.value }}</li>
+    {% empty %}
+      <li>No items</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

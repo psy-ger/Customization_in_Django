@@ -1,0 +1,11 @@
+{% load custom_tags %}
+<!doctype html>
+<html>
+<head><title>{{ site_name }}</title></head>
+<body>
+  <h1>{{ site_name }}</h1>
+  <p>Global value: {{ global_value }}</p>
+  <p>Year: {% current_year %}</p>
+  <a href="{% url 'core:custommodel_list' %}">Custom models</a>
+</body>
+</html>
